@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addProduct</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="product.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea [(ngModel)]="product.description" name="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price</ion-label>
+      <ion-input type="number" [(ngModel)]="product.precio" name="precio"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="sendForm()" expand="block">Add Product</ion-button>
+</ion-content>

@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Client list
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button [routerLink] = "['/add-product']">Add Product</ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)" pullFactor="0.5" pullMin="100" pullMax="200">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let product of productsList">
+      <ion-label>{{product.name}}</ion-label>
+      <ion-button color="danger" (click)="deleteProduct(product.id)">
+        BORRAR
+      </ion-button>
+    </ion-item>
+  </ion-list>
+ 
+</ion-content>
